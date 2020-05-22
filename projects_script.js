@@ -37,6 +37,13 @@ function show_hide(b,d){
 
 	//display current div 
 	current_div.style.display ='block';
+	
+	//Adjust border on bottom button
+	if (current_div != document.getElementById('misc_d')) {
+		document.getElementById('bottom_line').style.display='block';
+	} else {
+		document.getElementById('bottom_line').style.display='none';
+	}
 }
 
 //Lazy Load images on scroll
