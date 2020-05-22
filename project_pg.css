@@ -85,7 +85,7 @@ em{
 
 /*image stuff*/
 	img{
-		vertical-align: center;
+		align-self: center;
 	}
 
 	.center{
