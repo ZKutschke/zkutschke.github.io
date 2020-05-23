@@ -4,8 +4,8 @@ function show_hide(b,d){
 	var current_button = document.getElementById(b);
 	var current_div = document.getElementById(d);
 
-	var button_list = ['nimbus_b','bd_med_b','2.007_b','map_cart_b','map_leaks_b','pvhc_b','foundry_b','vex_b','h2ouse_b','bdhc_b','misc_b']; 
-	var div_list = ['nimbus_d','bd_med_d','2.007_d','map_cart_d','map_leaks_d','pvhc_d','foundry_d','vex_d','h2ouse_d','bdhc_d','misc_d']; 
+	var button_list = ['nimbus_b','2671_b','bd_med_b','2.007_b','map_cart_b','map_leaks_b','pvhc_b','foundry_b','vex_b','h2ouse_b','bdhc_b','misc_b']; 
+	var div_list = ['nimbus_d','2671_d','bd_med_d','2.007_d','map_cart_d','map_leaks_d','pvhc_d','foundry_d','vex_d','h2ouse_d','bdhc_d','misc_d']; 
 
 
 
