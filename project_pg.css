@@ -245,7 +245,7 @@ em{
 		background-size: cover;
 		height: 110vh; 
 		padding-top: 150px;
-		color:var(--header_text_color);
+		color: white;
 	}
 
 	.middle{
