@@ -240,7 +240,7 @@ em{
 		}
 
 	.banner{
-  		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 25%, rgba(0, 0, 0, 0.1) 75%, white 100%), url('/opt_image/iceland_background_opt.jpg');
+  		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 25%, rgba(0, 0, 0, 0.1) 75%, white 100%), url('opt_image/iceland_background_opt.jpg');
 		
 		background-size: cover;
 		height: 110vh; 
