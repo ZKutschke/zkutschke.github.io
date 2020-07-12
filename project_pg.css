@@ -239,6 +239,15 @@ em{
 			overflow: hidden;
 		}
 
+	.banner{
+  		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 25%, rgba(0, 0, 0, 0.1) 75%, white 100%), url('opt_images/iceland_background.jpg');
+		
+		background-size: cover;
+		height: 110vh; 
+		padding-top: 150px;
+		color: white;
+	}
+
 	.middle{
 		overflow: hidden;
 
