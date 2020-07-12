@@ -36,7 +36,7 @@ layout of style modifiers
 body{
 	/*Variable Declaration*/
 	--header_back_color:  #0B0C10;
-	--menu_color:      	  #66FCF1;
+	--menu_color:         #66FCF1;
 	--hover_menu_color:   #45A29E;
 	--header_text_color:  #66FCF1;
 
@@ -245,7 +245,7 @@ em{
 		background-size: cover;
 		height: 110vh; 
 		padding-top: 150px;
-		color: white;
+		color:var(--header_text_color);
 	}
 
 	.middle{
