@@ -38,7 +38,7 @@ body{
 	--header_back_color:  #0B0C10;
 	--menu_color:         #66FCF1;
 	--hover_menu_color:   #45A29E;
-	--header_text_color:  #66FCF1;
+	--header_text_color:  white;
 
 	--content_back_color: white;
 	background-color: var(--content_back_color);
