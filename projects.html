@@ -252,7 +252,7 @@
 					</div>
 
 					<div class='text_part'>
-						Pure Watercraft
+						PWC
 					</div>
 				</button>
 				
@@ -440,7 +440,7 @@
 					</div>
 					
 					<p class='content'>
-						(pressure daq)
+						One of the first projects I got was to make a data aquisition unit for a pressure transducer mounted on the updated gearbox in the new model of the outboard. The updated model and gearbox had a few possible valve configurations for the lubricant and we wanted to analyze which would be best both for normal use and shipping. The unit itself is pretty simple and just consists of a load cell amplifier, analog to digital converter, and a microcontroller to handle sending messages over CAN Bus. 
 					</p>
 					
 					<div class='image_container'>
@@ -452,6 +452,10 @@
 							<img data-src='opt_image/throttle_tester_trimpush.jpg' style='max-height: 25%; max-width: 25%;' class='lazy'>
 					</div>
 					
+					<p class='content'>
+						I also made a little fixture to mechanically test the throttle assembly by repeatedly smashing some of the buttons, actuating and moving the lever arm about the throttle's neutral detent, and by rotating the arm back and forth. 
+					</p>
+					
 					<div class='image_container'>
 
 							<img data-src='opt_image/throttle_tester_radial.jpg' style='max-height: 25%; max-width: 25%;' class='lazy' />
@@ -459,11 +463,15 @@
 							<img data-src='opt_image/throttle_tester_radial_sw.jpg' style='max-height: 25%; max-width: 25%;' class='lazy' />
 					</div>
 					
+					<p class='content'>
+						I had some fun making a simple gripper that conforms to the base of the lever using some spring loaded fingers. They're angled in such a way to cam within their slots when they're pushed on by the lever arm, but they're still easy to move by hand. 
+					</p>
+					
 					
 					<img data-src='opt_image/throttle_tester_side.jpg' style='max-height: 50%; max-width: 50%;' class='center lazy'/>
 					
 					<p class='content'>
-						(throttle tester)
+						It's a neat little system, it also logs all of its force (from the button actuations) and torque (from the radial test) to an onboard SD card and can be configured on the fly for the type of test to be ran and some of the test parameters. 
 					</p>
 					
 					<div class='image_container'>
@@ -476,7 +484,7 @@
 					</div>
 					
 					<p class='content'>
-						(bms bon)
+						I also got to help build up a piece of production equipment centered around testing, calibrating, and programming the BMS PCBs. I designed and made a bed of nails to sandwich the boards onto some spring loaded contacts and to completely isolate the user from the board. Given that there would be 400V going to the board during calibration and testing, there are toggle clamps and an integrated limit switch to ensure the test can't run while the operator is potentially exposed to high voltage. I also took a stab at writing some code to control the onboard power supply but the actual software engineer came back from vacation before I could finish it (it was originally his project). 
 					</p>
 					
 					<div class='image_container'>
@@ -486,11 +494,15 @@
 							<img data-src='opt_image/hoist_far.png' style='max-height: 25%; max-width: 25%;' class='lazy' />
 					</div>
 					
+					<p class='content'>
+						I did a lot of little jobs for some of the other engineers as well, to include some machining as well as rewiring this hoist that will hopefully be used in production.
+					</p>
+					
 					
 					<img data-src='opt_image/otw_test.png' style='max-height: 35%; max-width: 35%;' class='lazy' />
 					
 					<p class='content'>
-						(otw testing)
+						One of the fun parts of the internship was actually getting to use the system we were trying to bring to market. I got to go out on some of the nearby lakes to <del>break</del> test out changes to the system, which were mainly firmware and hardware updates to the battery and outboard. 
 					</p>
 					
 					<div class='image_container'>
@@ -500,14 +512,9 @@
 							<img data-src='opt_image/cts_logger_sidebyside.png' style='max-height: 25%; max-width: 25%;' class='lazy' />
 					</div>
 					
-					
 					<p class='content'>
-						(cts logger)
+						There are a lot of components of the system that require leak testing since we're basically throwing a massive battery pack into a lake. The process for actually conducting the testing was not well optimized when I got there so I attempted to automate it. The unit I put together worked in conjunction with an older CTS C28 to allow the operator to enter in a part number and start a preprogrammed test. The logger would then track all of the data spat out by the CTS's transducer (mainly in an attempt to provide some feedback on our initial test parameters), log all of this data along with whether the part passed or failed, and then automatically upload it to out server. Unfortunately I left before I could connect it to the server but the rest of it worked well. 
 					</p>
-					
-					<p class='content'>
-						(toms hoist)
-					</p>	
 					
 					<div class='image_container'>
 
@@ -520,11 +527,8 @@
 					
 					
 					<p class='content'>
-						(battery enclosure)
+						The boards for controlling the battery also required a testing and programming enclosure that was completely closed in to prevent electrocution of the user. This turned out to be a simple box with some integrated cabling/mounts, a limit switch, and a latch. The interesting part is that it had to be printed in 8 pieces. 
 					</p>	
-					
-
-
 					
 				
 					<div class='image_container'>
@@ -533,6 +537,10 @@
 
 							<img data-src='opt_image/kenzo.jpg' style='max-height: 25%; max-width: 25%;' class='lazy' />
 					</div>
+					
+					<p class='content'>
+						Finally and perhaps most importantly, I got to meet a lot of dogs while I was in Seattle. 
+					</p>
 					
 					
 						
