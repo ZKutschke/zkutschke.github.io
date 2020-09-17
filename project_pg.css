@@ -93,7 +93,7 @@ em{
 	.thumbnail{
 		height: 50px;
 		width: 50px;
-		font-family: Bookman, Arial, sans-serif;
+		
 		border-radius: 5px;
 	}
 
@@ -263,8 +263,9 @@ em{
 			float: left;
 
 			font-size: 16px;
+			font-family: Bookman, Arial, sans-serif;
 			color: var(--sidebar_text_color);
-
+	
 			width:200px;
 		}
 
