@@ -93,7 +93,7 @@ em{
 	.thumbnail{
 		height: 50px;
 		width: 50px;
-
+		font-family: Bookman, Arial, sans-serif;
 		border-radius: 5px;
 	}
 
