@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+
+
+<!------------------------------------------------------------
+	Steps to add a project:
+		-Add button and thumbnail to Sidebar
+
+		-Add div element/content for page to Page Content
+
+		-Add button and div tags to JS script 
+			-Add to initialize() in head 
+
+----------------------------------------------------------->
+
+
+
+<html>
+	<head>
+		<meta charset='UTF-8'/>
+		<meta property="og:url" content='zkutschke.github.io/projects.html' />
+		<meta property="og:type" content='website' />
+		<meta property="og:title" content='Zach Kutschke' />
+		<meta property="og:description" content='Past projects and portfolio' />
+		<meta property="og:image" content='opt_image/preview.jpg'/>
+
+		<title>Zach Kutschke</title>
+		<link rel='stylesheet' href='projects_2_style.css'/>
+		<script type='text/javascript' src ='project_2_js.js'></script>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--   ---   Loading Page style   ---   -->
+		<style>
+			/* Center the loader */
+			#load_page{
+				width: 100vw;
+				height: 100vh;
+				background-color: black;
+			}
+
+			.wait{
+				padding-top: 50px; 
+				font-family: Bookman; 
+				color: #66FCF1;
+				font-size: 16px;
+				font-weight: bold;
+				width: 20vw;
+				margin: auto;
+			}
+
+			.sk-cube-grid {
+				width: 5vw;
+			  	height: 5vw;
+			  	margin: auto;
+			}
+
+			.sk-cube-grid .sk-cube {
+			  	width: 33%;
+			  	height: 33%;
+			  	background-color: #66FCF1;
+			  	float: left;
+			  	-webkit-animation: sk-cubeGridScaleDelay 1.5s infinite ease-in-out;
+			    animation: sk-cubeGridScaleDelay 1.5s infinite ease-in-out; 
+			}
+			.sk-cube-grid .sk-cube1 {
+			  	-webkit-animation-delay: 0.2s;
+			    animation-delay: 0.2s; }
+			.sk-cube-grid .sk-cube2 {
+			  	-webkit-animation-delay: 0.3s;
+			    animation-delay: 0.3s; }
+			.sk-cube-grid .sk-cube3 {
+			  	-webkit-animation-delay: 0.4s;
+			    animation-delay: 0.4s; }
+			.sk-cube-grid .sk-cube4 {
+			  	-webkit-animation-delay: 0.1s;
+			    animation-delay: 0.1s; }
+			.sk-cube-grid .sk-cube5 {
+			  	-webkit-animation-delay: 0.2s;
+			    animation-delay: 0.2s; }
+			.sk-cube-grid .sk-cube6 {
+			  	-webkit-animation-delay: 0.3s;
+			    animation-delay: 0.3s; }
+			.sk-cube-grid .sk-cube7 {
+			  	-webkit-animation-delay: 0s;
+			    animation-delay: 0s; }
+			.sk-cube-grid .sk-cube8 {
+			  	-webkit-animation-delay: 0.1s;
+			    animation-delay: 0.1s; }
+			.sk-cube-grid .sk-cube9 {
+			  	-webkit-animation-delay: 0.2s;
+			    animation-delay: 0.2s; }
+
+			@-webkit-keyframes sk-cubeGridScaleDelay {
+			  	0%, 70%, 100% {
+			    	-webkit-transform: scale3D(1, 1, 1);
+			            	transform: scale3D(1, 1, 1);
+			  	} 35% {
+			    	-webkit-transform: scale3D(0, 0, 1);
+			            	transform: scale3D(0, 0, 1); 
+			  	}
+			}
+
+			@keyframes sk-cubeGridScaleDelay {
+			  	0%, 70%, 100% {
+			    	-webkit-transform: scale3D(1, 1, 1);
+			            	transform: scale3D(1, 1, 1);
+			  	} 35% {
+			    	-webkit-transform: scale3D(0, 0, 1);
+			            	transform: scale3D(0, 0, 1);
+			  	}	 
+			}
+
+			/* Add animation to "page content" */
+			.animate-bottom {
+				position: relative;
+				-webkit-animation-name: animatebottom;
+				-webkit-animation-duration: 0.5s;
+				animation-name: animatebottom;
+				animation-duration: 0.5s
+			}
+
+			@-webkit-keyframes animatebottom {
+				from { bottom:-50px; opacity:0 } 
+				to { bottom:0px; opacity:1 }
+			}
+
+			@keyframes animatebottom { 
+				from{ bottom:-50px; opacity:0 } 
+				to{ bottom:0; opacity:1 }
+			}
+		</style>
+	</head>
+
+
+
+
+	<body style="margin:0;">
+
+<!-- ---- ----     Loading page and initialization   ---- ----> 
+		<div id='load_page'>
+			<div id='loader' style='height: 20vh;'></div>
+
+			<div class="sk-cube-grid" id='loader'>
+			  	<div class="sk-cube sk-cube1"></div>
+			  	<div class="sk-cube sk-cube2"></div>
+			  	<div class="sk-cube sk-cube3"></div>
+			  	<div class="sk-cube sk-cube4"></div>
+			  	<div class="sk-cube sk-cube5"></div>
+			  	<div class="sk-cube sk-cube6"></div>
+			  	<div class="sk-cube sk-cube7"></div>
+			  	<div class="sk-cube sk-cube8"></div>
+			  	<div class="sk-cube sk-cube9"></div>
+			</div>
+
+			<div id='quote' class='wait'>Loading...</div>
+		</div>
+
+
+ <!---- -----      Show/hide page + lazy loader    ---- ---- -->
+		<script>
+				//Close all but top div, highlight top buttton
+				function initialize(){
+					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b']; 
+					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d']; 
+					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
+
+					for(var i=1; i<div_list.length; i++){
+						document.getElementById(div_list[i]).style.display='none';
+					}
+				}
+
+
+				//Use for Testing
+				//setInterval(showPage, 1000);
+
+
+				
+				//Transition when Page loads
+					// Everything but IE
+					window.addEventListener("load", function() {
+		 	  			showPage();
+					    initialize();
+					}, false); 
+
+					// IE
+					window.attachEvent("onload", function() {
+					    showPage();
+					    initialize();
+					});
+
+		
+
+				//Define which elements to show and hide
+				function showPage() {
+			  		document.getElementById('loader').style.display = 'none';
+			  		document.getElementById('quote').style.display = 'none';
+			  		document.getElementById('load_page').style.display = 'none';
+			  		document.getElementById('entire_page').style.display = 'block';
+				}
+
+			</script>
+
+	<!--------       Header section             -------->
+			<div id='entire_page'>
+				<div class='header'>
+					<div class='menu_container'>
+						<h2 style='padding-left: 30px; width: 50vw; text-align: left; float: left;'> Zach Kutschke </h2>
+
+						<a href='about_2.html'>
+							<div class='menu_button'>
+								About
+							</div>
+						</a>
+
+					
+						<div class='menu_button' id='project_select_b' onclick="show_hide('project_select_b', 'project_select_d')">
+							Projects
+						</div>
+						
+
+						<a href='resume.pdf' target='_blank'>
+							<div class='menu_button'>
+								Resume
+							</div>
+						</a>
+
+						<a href='https://www.linkedin.com/in/zachkutschke/' target='_blank'>
+							<div class='menu_button'>
+								Contact
+							</div>
+						</a>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+<!---          MIDDLE SECTION                ---->
+				<div class='middle'>
+					<div style='height: 50px;'></div>
+
+					<!----           FRONT PAGE      ---->
+					<div id='project_select_d' class='project_page'>
+						<div class='section_header'>
+								Professional
+						</div>
+						<hr>
+						
+						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('pwc_b', 'pwc_d')">
+								<img src="opt_image/thumbnails2/pwc_motor.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Pure Watercraft, 2020
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('bdmed_b', 'bdmed_d')">
+								<img src="opt_image/thumbnails2/bd_med_sw.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									BD Medical, 2019
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('map2_b', 'map2_d')">
+								<img src="opt_image/thumbnails2/map_cart2_cropped.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Musashi Auto Parts, 2018
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('map1_b', 'map1_d')">
+								<img src="opt_image/thumbnails2/leak_gear.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Musashi Auto Parts, 2017
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class='spacer'></div>
+
+
+
+						<div class='section_header'>
+								Academic 
+						</div>
+						<hr>
+
+						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('sevt_b', 'sevt_d')">
+								<img src="opt_image/thumbnails2/nimb_cropped.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Solar Electric Vehicle Team
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2671_b', '2671_d')">
+								<img src="opt_image/thumbnails2/" class='tile_image'>
+								<div class='tile_caption'>
+									2.671: Measurement and Instrumentation
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2810_b', '2810_d')">
+								<img src="opt_image/thumbnails2/2810_1_cropped.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									2.810: Manufacturing Processes and Systems
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2007_b', '2007_d')">
+								<img src="opt_image/thumbnails2/2007_trans1_cropped.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									2.007: Design and Manufacturing I
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class='spacer'></div>
+
+
+
+						<div class='section_header'>
+								Personal
+						</div>
+						<hr>
+						
+						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('casting_b', 'casting_d')">
+								<img data-src="opt_image/thumbnails2/old_nozzle_run_cropped.jpg" class='tile_image lazy'>
+								<div class='tile_caption'>
+									Metal Casting
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('cannons_b', 'cannons_d')">
+								<img data-src="opt_image/thumbnails2/pvhc_down_barrel_cropped.jpg" class='tile_image lazy'>
+								<div class='tile_caption'>
+									Cannons
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('h2ouse_b', 'h2ouse_d')">
+								<img data-src="opt_image/thumbnails2/h2ouse_logo_resized.png" class='tile_image lazy'>
+								<div class='tile_caption'>
+									Conrad Challenge: H<sub>2</sub>Ouse
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('misc_b', 'misc_d')">
+								<img data-src="opt_image/thumbnails2/truck.jpg" class='tile_image lazy'>
+								<div class='tile_caption'>
+									Misc projects
+								</div>
+							</div>
+						</div>
+						<div style='height: 150px;'></div>
+					</div>
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    PURE WATERCRAFT    ----                     -->
+					<div id='pwc_d'>
+						<h3 class='content_title'>
+							Pure Watercraft
+						</h3>
+						
+						<p >
+							 I got the opportunity to intern with Pure Watercraft during my 2020 summer break as a mechatronics and test engineer. I learned a ton about throwing together electronics and hardware as well as putting together pieces of software and programs. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/pressure_daq_2.jpg'  class='lazy' />
+
+								<img data-src='opt_image/pressure_daq_3.jpg' class='lazy' />
+
+								<img data-src='opt_image/pressure_daq_4.jpg' class='lazy'>
+						</div>
+						
+						<p >
+							One of the first projects I got was to make a data aquisition unit for a pressure transducer mounted on the updated gearbox in the new model of the outboard. The updated model and gearbox had a few possible valve configurations for the lubricant and we wanted to analyze which would be best both for normal use and shipping. The unit itself is pretty simple and just consists of a load cell amplifier, analog to digital converter, and a microcontroller to handle sending messages over CAN Bus. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/throttle_tester_mainpush.jpg' class='lazy' />
+
+								<img data-src='opt_image/throttle_tester_screenpush.jpg'  class='lazy' />
+
+								<img data-src='opt_image/throttle_tester_trimpush.jpg'  class='lazy'>
+						</div>
+						
+						<p >
+							I also made a little fixture to mechanically test the throttle assembly by repeatedly smashing some of the buttons, actuating and moving the lever arm about the throttle's neutral detent, and by rotating the arm back and forth. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/throttle_tester_radial.jpg'  class='lazy' />
+								<img data-src='opt_image/throttle_tester_grippers.jpg' style='width: 600px;' class='center lazy'/>
+								<img data-src='opt_image/throttle_tester_radial_sw.jpg'  class='lazy' />
+						</div>
+						
+						<p >
+							I had some fun making a simple gripper that conforms to the base of the lever using some spring loaded fingers. They're angled in such a way to cam within their slots when they're pushed on by the lever arm, but they're still easy to move by hand. 
+						</p>
+						
+						
+						<img data-src='opt_image/throttle_tester_side.jpg'  class='center lazy'/>
+						
+						<p >
+							It's a neat little system, it also logs all of its force (from the button actuations) and torque (from the radial test) to an onboard SD card and can be configured on the fly for the type of test to be ran and some of the test parameters. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/bms_bon_closed.png'  class='row_img lazy' />
+
+								<img data-src='opt_image/bms_bon_open.png'  class='row_img lazy' />
+
+								<img data-src='opt_image/bms_eol.png'  class='row_img lazy'>
+						</div>
+						
+						<p >
+							I also got to help build up a piece of production equipment centered around testing, calibrating, and programming the BMS PCBs. I designed and made a bed of nails to sandwich the boards onto some spring loaded contacts and to completely isolate the user from the board. Given that there would be 400V going to the board during calibration and testing, there are toggle clamps and an integrated limit switch to ensure the test can't run while the operator is potentially exposed to high voltage. I also took a stab at writing some code to control the onboard power supply but the actual software engineer came back from vacation before I could finish it (it was originally his project). 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/hoist_close.png'  class='lazy' />
+
+								<img data-src='opt_image/hoist_far.png'  class='lazy' />
+						</div>
+						
+						<p >
+							I did a lot of little jobs for some of the other engineers as well, to include some machining as well as rewiring this hoist that will hopefully be used in production.
+						</p>
+						
+						
+						<img data-src='opt_image/otw_test.png'  class='center lazy' />
+						
+						<p >
+							One of the fun parts of the internship was actually getting to use the system we were trying to bring to market. I got to go out on some of the nearby lakes to <del>break</del> test out changes to the system, which were mainly firmware and hardware updates to the battery and outboard. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/cts_logger_open.jpg'  class='lazy' />
+
+								<img data-src='opt_image/cts_logger_sidebyside.png'  class='lazy' />
+						</div>
+						
+						<p >
+							There are a lot of components of the system that require leak testing since we're basically throwing a massive battery pack into a lake. The process for actually conducting the testing was not well optimized when I got there so I attempted to automate it. The unit I put together worked in conjunction with an older CTS C28 to allow the operator to enter in a part number and start a preprogrammed test. The logger would then track all of the data spat out by the CTS's transducer (mainly in an attempt to provide some feedback on our initial test parameters), log all of this data along with whether the part passed or failed, and then automatically upload it to out server. Unfortunately I left before I could connect it to the server but the rest of it worked well. 
+						</p>
+						
+						<div class='image_container'>
+
+								<img data-src='opt_image/battery_board_closed.png'  class='lazy' />
+
+								<img data-src='opt_image/battery_board_empty_2.png'  class='lazy' />
+
+								<img data-src='opt_image/battery_board_full.png'  class='lazy'>
+						</div>
+						
+						
+						<p >
+							The boards for controlling the battery also required a testing and programming enclosure that was completely closed in to prevent electrocution of the user. This turned out to be a simple box with some integrated cabling/mounts, a limit switch, and a latch. The interesting part is that it had to be printed in 8 pieces. 
+						</p>	
+						
+					
+						<div class='image_container'>
+
+								<img data-src='opt_image/koda.jpg'  class='lazy' />
+
+								<img data-src='opt_image/kenzo.jpg'  class='lazy' />
+						</div>
+						
+						<p >
+							Finally and perhaps most importantly, I got to meet a lot of dogs while I was in Seattle (I only got pictures of two, but trust me there were lots more). 
+						</p>
+						
+					</div>
+
+
+
+
+
+
+
+
+
+	<!--      ----    BD MEDICAL         ----                     -->
+					<div id='bdmed_d'>
+						<h3 class='content_title'>
+							BD Medical Automated Bag Tester
+						</h3>
+
+						<p >
+							The first portion of my internship at BD Medical consisted of testing a lot of small reservoir bags for their new wearable insulin delivery device. The whole process of testing these bags was time consuming and inefficient, so in the 50 seconds between each test I slowly designed a robotic arm and fixture to automate the testing.  
+						</p>
+
+						<img data-src='opt_image/bd_med_sw.jpg'  class='lazy'/>
+
+						<p >
+							After doing some testing and revisions of the structural components, I arrived at the design shown to the right and below. It has two lead screws to drive the lift and tray, a rack and pinion for the arm, and two air cylinders for clamping and advancing the bag into the CTS instrument for pressure decay leak testing. I also put together the control/power circuitry and programmed it with an Arduino. 
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/bd_med6.jpg' class='lazy'/>
+
+							<img data-src='opt_image/bd_med3.jpg' class='lazy'/>
+						</div>
+
+						<p >
+							After completing the project I put together a report and further designs for a faster and more flexible tester for their operations team to follow up on. I completely failed to take into account how underpowered my motors were when I ordered them (I did some back of the napkin calculations for a rough size but didn't account for how much friction there would be in the system). I also chose to actuate the whole thing with stepper motors and lead screws, even though it would have been 100x faster and more precise to slap in some simple pnuematic cylinders, all because I did not clarify with my boss what my budget actually was for the project (and a cheap stepper + threaded rod is 10x less expensive than a decent pnuematic cylinder). 
+						</p>
+					</div>
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    MAP 2nd            ----                     -->
+					<div id='map2_d'>
+						<h3 class='content_title'>
+							Musashi Auto Parts: Rolling Machine Shop
+						</h3>
+
+						<p >
+							The floor of Musashi Auto Parts-MI is fairly large, and so whenever a new machine or production line is put in it’s a pain since all of the tools and equipment are housed on the opposite end of the plant from the new lines. Hence, I was tasked with making a cart that contained all of the goodies that might be needed in machine installation.
+						</p>
+
+						<div class='image_container'>
+							<img src='opt_image/map_cart2.jpg' />
+
+							<img src='opt_image/map_cart3.jpg' />
+						</div>
+
+						<p >
+							I helped design the cart and presented the concept to the other engineers in the department with a fellow intern (Joanna Robinson). Another intern (Michael Campbell) helped me with welding the frame while I made more of the pieces/components. Aside from that I fabricated, machined, welded, and wired the rest of the cart.  It should save the engineers doing the line installations tens of hours per week collectively just by having all of the equipment and parts in one place. The cart had a bunch of fanciful features, including a fold-out work surface, extension ports, overhead lights, a drill press, a vice, and a grinder. 
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/map_cart1.jpg'  class='lazy'/>
+
+							<img data-src='opt_image/map_cart4.jpg'  class='lazy'/>
+						</div>
+
+
+
+						<p >
+							The plan was to also have the sides and center of the cart filled with electronically locked tool boxes. Unfortunately, the lead time on these tool boxes meant that I could not finish the project in time to go back to school. The touch pad on the center post of the cart was supposed to control power to all of the machines and the locks on all of the tool storage locations so that none of the more curious line workers would get curious and lose a finger or walk off with a new angle grinder. 
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/junc_box.jpg'  class='center lazy'/>
+
+							<img data-src='opt_image/easter_egg.jpg'  class='center lazy'/>
+						</div>
+							
+
+						<p >
+							The cart itself is an absolute unit, designed and handmade (mostly) by yours truly. The top work surface is a half inch thick slab of AR500 plate topped off with a layer of stainless steel sheet. The rest of the cart is all steel tubing and sheet metal thick enough to make an industrial sheet metal brake cry a little. 
+
+							I've personally <del>accidentally</del> dropped it from a crane only to break the already battle hardened floor while trying to paint the underside. The electronics for the project where pretty simple (just a PLC and a handful of relays), but I still got to learn a lot about industrial electronics and wiring. 
+						</p>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    MAP 1st            ----                     -->
+					<div id='map1_d'>
+						<h3 class='content_title'>
+							Musashi Auto Parts: Gear Subassembly Leak Testing
+						</h3>
+
+						<p >
+							The Musashi Auto Parts (MAP) plant in Battle Creek, MI, manufactures components for and assembles automotive differentials. It was super cool since the side gears for the differentials were made <em>in house</em>. Giant lengths of steel billet and the actual housings went in one door and out of the other came finished differentials. 
+						</p>
+
+						<img src='opt_image/leak_gear.JPG'  class='center'/>
+
+						<p >
+							The problem that MAP had was that its side gears were leaking. They are fitted with a cap before assembly that's supposed to ensure that differential fluid does not leak out of the assembly. But a handful would leak anyway, so they needed a means of testing them in production. Ergo, my summer project.
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/leak_clamp.JPG'  class='lazy'/>
+
+							<img data-src='opt_image/leak_over2.JPG'  class='lazy'/>
+						</div>
+
+						<p >
+							With the supervision of one of the lead engineers I made an apparatus that would allow me to take factory air, stabilize it to some degree, run it through a machine to measure its flow rate, and lead all of that to a clamp that would seal the gear and flow analyzer together.  The setup also allowed me to fill the gears up with pressurized water for a fluid loss test. 
+						</p>
+
+						<img data-src='opt_image/geartester.PNG'  class='center lazy'/>
+
+						<p >
+							 The data I collected was sent to various engineering and company leads and used in assigning a new leak rate test for the gears so that the company would not output as many leaking gear assemblies/differentials.
+						</p>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    SEVT               ----                     -->
+					<div id='sevt_d'>
+						<h3 class='content_title'>
+							MIT Solar Electric Vehicle Team: Nimbus
+						</h3>
+
+						<p >
+							 MIT’s SEVT is a student ran organization dedicated to designing and building solar powered cars from the ground up to compete in 1,500+ mile endurance races. Our car in 2019-2020 (Nimbus) was an asymmetric catamaran style as that form factor lends itself for better aerodynamics given its reduced frontal area. 
+						</p>
+
+						<div class='image_container'>
+
+								<img data-src='opt_image/parkbrake.JPG'  class='lazy' />
+
+								<img data-src='opt_image/rearsus.JPG'  class='lazy' />
+
+								<img data-src='opt_image/rearsus_trans.PNG'  class='lazy'>
+						</div>
+
+						<p >
+							I did a lot of work in designing the parking brake (to the left), which is basically just putting a lever arm and a locking/release mechanism on a hydraulic cylinder. I also worked on redesigning some of the geometry for the rear suspension. Originally we planned (and made) our rear suspension's L-arm out of two pieces of steel to be welded together (picture of half of it below). 
+						</p>
+
+						<img data-src='opt_image/rearsus_raw.jpg'  class='center lazy'/>
+
+						<p>
+							After having to actually machine the parts and learning first hand how terribly they were designed (in part by yours truly), I redesigned the connection point between the two parts such that it would suffice to make it from aluminum and to be easier to machine (the joint is pictured above). 
+						</p> 
+
+							<img data-src='opt_image/nimbus_split.jpg'  class='center lazy'/>
+
+						<p >
+							As an upperclassman on the team, I helped teach a lot of new members and underclassmen the basics of machining and design, and as the business lead for the team I helped to maintain relations with our sponsors and raised tens of thousands of dollars for the project.
+						</p>
+
+						
+						<img data-src='opt_image/nimb.jpg'  class='center lazy'/>
+						
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    2.671              ----                     -->
+					<div id='2671_d'>
+						<h3 class='content_title'>
+							2.671: Measurement and Instrumentation
+						</h3>
+
+						<p >
+							2.671 at MIT is all about measurement instruments and processing data. A major component of the class is a personal measurement and analysis project over the semester, for which I made a small gas powered cannon. 
+						</p>
+
+						<img src='opt_image/2671_dia.png'  class='center'/>
+
+						<p >
+							I wanted to see the effect that the ignition point placement would have on the internal combustion characteristics of my cannon. I made it a simple setup with a rupture disc to contain the pressure until some roughly set release point, and I tested just 3 ignition points at the two ends and middle of the chamber. I purposely made the chamber long and narrow to try and accentuate any effect that the placement would have. 
+						</p>
+
+						<img src='opt_image/2671_over.png'  class='center'/>
+
+						<p >
+							The left most graph shows a sample of the pressure transducer's output over time, the middle the mean times to reach peak chamber pressure, and the right a quadratic fit of the data. I hypothesized that the fastest peak pressure time would be seen at the centroid of the chamber since there would be two flame fronts propagating an equal, minimized distance if they originated at this point. It's interesting to note that the mean peak pressure time was NOT in the centroid of the chamber but actually shifted from it, possibly indicating some more significant reliance on the chamber's morphology than simply finding its centroid (i.e. that the bend/elbow in the chamber affected the flame propagation speed). 
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/2671_sample.png' class='row_img lazy'/>
+					
+							<img data-src='opt_image/2671_timebars.png'  class='row_img lazy'/>
+
+							<img data-src='opt_image/2671_time_fit.png'  class='row_img lazy'/>
+						</div>
+
+						<p >
+							I also took peak pressure but didn't wind up using it since the wait periods for the chamber to achieve a homogeneous enough mixture for combustion varied significantly for the end sparkplug position (screwing up my pressure readings somewhat). I took the muzzle velocity too but didn't use it since it appeared to be corrupted by a lack of light in the test environment (it works through reading light changes) and/or by pieces of the rupture disc flying through it. The really interesting result from this is that I didn't receive a visit from the authorities while firing off a cannon >30 times in the middle of Boston. 
+						</p>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    2.810              ----                     -->
+					<div id='2810_d'>
+						<p >
+							MIT's 2.810 (Manufacturing Systems and Processes) has a lab/competition component where teams design and build a set of 6 RC cars. Since we were Team A, we became the A Team.
+						</p>
+
+						<img src='opt_image/2810_idea.jpg' class='center'/>
+
+						<p>
+							I'm not sure where this image came from, but we were dead set on achieving this look for our final cars. As part of the project, we got to make custom 3D printed positive molds to thermoform our cars' shells. 
+						</p>
+
+						<div class='image_container'>
+							<img src='opt_image/2810_mold.jpg' />
+
+							<img src='opt_image/2810_raw.jpg' />
+						</div>
+
+						
+						<p>
+							It took a lot of iterating on the temperature and material selection before we got a shell that consistently worked. It's hilariously simple mechanically, where the front hinge is just a piece of bent plastic. 
+						</p>
+
+
+						<div class='image_container'>
+							<img data-src='opt_image/2810_1.jpg' class='lazy'/>
+
+							<img data-src='opt_image/2810_2.jpg'  class='lazy'/>
+						</div>
+
+						<p>
+							During the actual race component of the course we happened to strip a lot of our gears (we definitely didn't design the power train to be very robust), but until that point we were contenders for first place. The control box containing the battery, reciever, and steering servo was also made to be easily swapped between cars (since we had to swap out cars every lap). 
+						</p>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    2.007              ----                     -->
+					<div id='2007_d'>
+						<h3 class='content_title'>
+							MIT 2.007: Moonshot
+						</h3>
+
+						
+
+						<p >
+							2.007 is the MIT class with complementary robotics competition that spawned FIRST Robotics. The 2019 competition, Moonshot, mainly involved traveling down a series of ramps, picking up rocks, and getting back up to the starting position (along with some other possible scoring objectives along the way). 
+						</p>
+
+						
+
+						<img data-src='opt_image/2007_sw.png'  class='center lazy'/>
+						<p >
+							My robot was designed to get down the ramp, pick up a handful of rocks in a bin, and then lift up that bin and shoot it out into the starting area for the points. It was also made to pull a multiplier (a 6lb weight). I learned a ton about design throughout the class while iterating and testing different ideas and concepts for the bot.
+						</p>
+						
+
+
+						<div class='image_container'>
+							<img data-src='opt_image/2007_trans_old2.jpg'  class='row_img lazy'/>
+
+							<img data-src='opt_image/2007_trans1.jpg'  class='row_img lazy'/>
+
+							<img data-src='opt_image/2007_trans_old1.jpg'  class='row_img lazy'/>
+						</div>
+						<p >
+							I'll admit, I got pretty ambitious with how many of the scoring elements I wanted to take a crack at. I quickly realized that if I wanted to get a faster robot I had to give my drive train at least half of my motors. That only left me three motors to yank a 6lb weight, collect a bunch of rocks, and raise them up a few feet (and all in under two minutes or so). 
+
+							My solution? I made a transmission with the remainder of my motors (first one with 2, then upgraded to 3). It was pnuematically actuated, included some handmade dog gears, and was strong enough to take a finger.  
+						</p>
+
+
+
+						<img data-src='opt_image/ratchet_intake.jpg'  class='center lazy'/>
+						<p >
+							I also needed a means of collecting rocks that didn't require additional motors, so laser cut this little ratchet assembly and tied my drive train to the collector. The ratchet was so that the collector would only operate when I was driving forward and not fling the rocks back out when I went backwards. 
+						</p>
+
+
+
+						<div class='image_container'>
+							<img data-src='opt_image/chassis_old.jpg'  class='lazy'/>
+					
+							<img data-src='opt_image/chassis_new.jpg'  class='lazy' />
+						</div>
+						<p >
+							I also had a few cracks at making a proper chassis. The first attempt I failed to take into account the fact that thin sheet aluminum distorts really easily when bent, rendering it completely dimensionally inaccurate. I finally landed on a good 3 part chassis, a few iterations in.				
+						</p>
+						
+						<div class='image_container'>
+							<img src='opt_image/2007_bot.jpg'  />
+					
+							<img src='opt_image/2007_collapsed.jpg'  />
+						</div>						
+
+						<p >
+							All in all, this robot didn't actually come together by competition day. I got very ambitious and tried to do a lot of different relatively complicated things rather than just focusing on moving rocks from point A to point B. But I still got to learn a lot about design and manufacturing, and had a lot of fun building this. 
+						</p>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    METAL CASTING      ----                     -->
+					<div id='casting_d'>
+						<h3 class='content_title'>
+							Metal Melting and Casting
+						</h3>
+
+						<p > 
+							For a while I have been messing around with metal casting. I had made a furnace that ran off propane but it was somewhat fragile and the cost of propane was getting to be too much for my budget. After that I started playing around with oil burners and resistance furnaces.
+						</p>
+
+						<img data-src='opt_image/propane_crop.jpg'  class='center lazy'/>
+						<p>
+							The first forge I made was casted using a furnace cement and perlite mixture. Perlite is basically just expanded rock/mineral, so it's a very cheap high temperature insulator. The oven itself cracked pretty easily and was not very robust, though it was very portable (I could load the whole thing + propane in my trunk) and was pretty quick to use. The price of propane was starting to eat my paltry budget though so I started looking for alternatives pretty soon. 
+						</p>
+
+
+						<img data-src='opt_image/elec_forge.JPG'  class='center lazy'/>
+
+						<p>
+							In my quest to make a cheaper (propane is not cheap when you have no income) and easier to use (less than 1 hour set up time) furnace, I experimented with resistance forges. I basically stuck an electric stove’s heater with a steel shell into a pile of perlite and contained the whole thing in a cardboard box. It’s honestly amazing that the perlite was a good enough insulator to keep the box from catching on fire, even though the chamber reached somewhere around 1600F
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/old_nozzle_test.JPG'  class='lazy'/>
+
+							<img data-src='opt_image/old_nozzle_run.JPG'  class='lazy'/>
+						</div>
+
+						<p >
+							Another energy source I looked into for a while was used motor oil, which, thanks to a well-placed ad on craigslist, I had obtained 50 gallons of. I initially tried dripping the oil into an airstream to atomize it, but I couldn’t get that to work. At some point I tried vaporizing the oil and pressurizing it but that didn’t work at all. After that I tried pressurizing the oil and just combining the oil and air lines in a junction right before the nozzle, which turned out to work for the most part.
+
+							For the furnace itself I basically dug a hole in the ground and lined it with cinder blocks and bricks that I had lying around. The largest melt I attempted in my makeshift pit was about 10lbs of aluminum, though the entire apparatus supporting the pressurized oil and air rig is very cumbersome.  
+						</p>
+						
+						<img data-src='opt_image/siphon.jpg' class='lazy center'>
+
+						<p>
+							I have played around with siphon nozzles some, the only problem is that they still require a high volume of compressed air, which limited the mobility of my setup/made the whole thing more cumbersome to setup.
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/delavan2.jpg' class='lazy'/>
+
+							<img data-src='opt_image/delavan1.jpg' class='lazy'/>
+						</div>
+
+						<p>
+							Delavan nozzles are a type of pumped oil nozzle, where the oil is atomized not directly through interaction with pressurized air but by its own centrifugal forces as it's forced through the nozzle. This frees me from having to hook up a large compressed air source, which is pretty nice. The only problem is that the massive amount of oil I obtained came from these amateur stock car racers who slopped in all sorts of additives into an already high viscocity oil. The resulting sludge only managed to clog my poor nozzle.
+						</p>
+						
+						<div class='image_container'>
+							<img data-src='opt_image/negative_mold.jpg' style='height:410px;' class='lazy'/>
+							<img data-src='opt_image/wax_mold.jpg' class='row_img lazy'/>
+							<img data-src='opt_image/empty_investment.jpg' class='row_img lazy'/>
+						</div>
+						<p>
+							I have done some sandcasting and 'lost foam casting', but it's generally hard to juggle a camera and liquid aluminum simutaneously. I did take a dive into some investment casting by attempting to replicate this fire extinguisher handle. I wanted a metal version that I could modify to turn the extinguisher into a pressurized fuel cell. 
+						</p>
+
+
+						<div class='image_container'>
+							<img data-src='opt_image/melt_puddle.jpg' class='row_img lazy'/>
+							<img data-src='opt_image/investment_broken.jpg' class='row_img lazy'/>
+						</div>
+						<p>
+							The cast itself was a mild failure given that I didn't cook the investment for long enough to drive all of the water out of it prior to pouring the metal. Believe me when I say it's terrifying to have liquid metal jumping back out of the mold you just poured it into.
+						</p>
+
+
+						<img data-src='opt_image/invest_hand.jpg' class='lazy center'/>
+						<p>
+							I also made this little bronze hand as part of a day trip to one of MIT's foundry and metal working rooms. 
+						</p>
+
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    CANNONS            ----                     -->
+					<div id='cannons_d'>
+
+						<!--  PVHC  -->
+						<h3 class='content_title'>
+							Piston Valve Hybrid Cannon
+						</h3>
+
+						<p >
+							Are you having trouble with your long game? Do you just really need to be able to send a golf ball 550+ yards in a single stroke? Then I have just the thing for you!
+						</p>
+
+						<img src='opt_image/sw_valve.PNG'  class='center'/>
+
+						<p >
+							The piston valve hybrid cannon was a concept I saw on YouTube a few years ago and always wanted to build. It replaces the rupture disc normally used in ‘hybrid’ cannons with a piston to more finely tune the opening pressure of the chamber. I haven’t actually gotten a chance to mess around with it too much but its theoretical maximum velocity is around 1500ft/s with a standard golf ball.
+						</p>
+
+						<div class='image_container'>
+							<img src='opt_image/pvhc_apart.jpg' class='row_img'/>
+
+							<img src='opt_image/pvhc_down_barrel.jpg'/>
+
+							<img src='opt_image/HGDT_pv.jpg'/>
+						</div>
+
+						<p >
+							The piston is pretty simple and works off of a pressure differential between the rear pilot area and the chamber. Since there's a large difference in exposed areas between these two sections, it becomes possible to control the opening of the valve with a much smaller volume and pressure. 
+
+							I alo used this program called HGDT (hybrid gun design tool) to roghly spec out the dimensions of my chamber and barrel and get rough estimates of the muzzle velocity. For an AP physics project I also put together my own model to estimate the muzzle velocity and energy that was pretty close to HGDT's output and could be tuned once I had actual data from my cannon. 
+						</p>
+
+						<div class='image_container'>
+							<img data-src='opt_image/pvhc_meter.JPG'  class='lazy'/>
+							<img data-src='opt_image/pvhc_over1.JPG'  class='lazy'/>
+						</div>
+
+						<p>
+							The metering system uses the chamber’s pressure to measure how much fuel and air are present and the ignition system is based on a remote switch and a DC step up module.
+						</p>
+
+						
+
+						<!--  BDHC  -->
+						<div class='image_container'>
+							<img data-src='opt_image/bdhc1.jpg'  class='center lazy'/>
+				
+							<img data-src='opt_image/HGDT_bd.jpg'  class='center lazy'/>
+						</div>		
+						
+						<p >
+							I also made another hybrid style cannon on a smaller scale that utilized a rupture disc instead of a piston valve. With the disc and butane/air mix a fairly precise chamber pressure can be achieved as well as predictable velocities/muzzle energies (with a marble the muzzle velocity tends to top out at around 1800ft/s).
+						</p>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    H2OUSE             ----                     -->
+					<div id='h2ouse_d'>
+						<h3 class='content_title'>
+							Team Impetus Presents: H<sub>2</sub>Ouse
+						</h3>
+
+						<img src='opt_image/h2ouse_logo.jpg'  class='center'/>
+						<p >
+							Me and my friend James George entered and competed as finalists in the international Conrad Spirit of Innovation Challenge in 2016-2017 with our project “H2Ouse”. H2Ouse (which we couldn’t really figure out how to pronounce, but we made a pretty cool logo for) is a combination greenhouse/mini desalination plant using a fairly novel renewable fuel source. When we looked at areas of the world experiencing water stress we noticed two things: that a majority of these nations bordered some body of salt water and that a significant portion of the water draws for a lot of these countries was going towards agricultural irrigation. 
+						</p>
+							
+							
+
+						<img data-src='opt_image/h2ouse.jpg'  class='center lazy'/>
+
+						<p >
+							H2Ouse consists of two main parts, the first is a large fermentation tank where people can load organic waste and was meant to provide fuel to the greenhouse portion of H2Ouse, which would use it to desalinate sea water for plant irrigation. The actual presentation we gave was performed in front of a panel of professional judges and a crowd of overachieving students from all over the world and was broadcast on TV. This by far was the most terrifying thing I had done up until that point, but it was still pretty fun. 
+						</p>
+
+						<img data-src='opt_image/conrad_mock.JPG'  class='center lazy'/>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--      ----    MISC SECTION    ----                     -->
+				<div id='misc_d'>
+					<h3 class='content_title'>
+						Smaller Projects
+					</h3>
+
+					<p>
+						Enjoy some of the random things I threw together. 
+					</p>
+
+
+
+
+
+					<!--   flame thrower   -->
+					<div class='image_container'>
+						<img data-src='opt_image/flame.jpg' style='height: 380px;' class='lazy'/>
+
+						<img data-src='opt_image/flames.jpg'  class='lazy'/>
+					</div>
+
+					<p style="text-align: center;">
+						Every man, woman, and man-child should have their own personal flamethrower. 
+					</p>
+
+					<div class='spacer_misc'></div>
+
+
+
+
+
+					<!-- Lil machining things?  -->
+					<img data-src='opt_image/truck.jpg' class='center lazy'>
+
+					<p style="text-align: center;">
+						For a mini class on subtractive manufacturing processes, I machined this little toy truck.
+					</p>
+
+					<div class='spacer_misc'></div>
+
+
+
+
+
+					<!--   gold refining   -->
+					<div class='image_container'>					
+						<img data-src='opt_image/gold3.jpg'  class='lazy'/>
+
+						<img data-src='opt_image/gold2.jpg'  class='row_img lazy'/>
+						
+						<img data-src='opt_image/gold1.jpg'  class='lazy'/>
+					</div>
+
+					<p >
+						MIT has some excellent locales for the dumpster divers out there. After a year of collecting some really terrible sticks of RAM out of ancient computers, I tried my hand at recovering the gold plating from the contact pins. My end capture was pretty pathetic, and I may have accidentally fumigated the room I was working in, but I still have the actual sticks left to ash and process. 
+					</p>
+
+					<div class='spacer_misc'></div>
+
+
+
+
+
+					<!--   IR Cmaera   -->
+					<div class='image_container'>
+						<img data-src='opt_image/ir_cam1.jpg'  class='lazy'/>
+
+						<img data-src='opt_image/ir_cam2.jpg'  class='row_img lazy'/>
+					</div>
+
+					<p >
+						I ripped open a camera and removed its internal filters to make it a full spectrum camera. I'm still fudging around with the post processing to make the pictures not look like trash but its getting there.
+					</p>
+
+
+
+
+					<!-- Jacobs Ladder  -->
+					<p style='padding-bottom: 10px;'>
+						What do you get when you mix a microwave and a free afternoon? 
+					</p>
+					<div class='image_container'>
+						<img data-src='opt_image/jacobs1.jpg'  class='center lazy'/>
+			
+						<img data-src='opt_image/jacobs2.jpg'  class='center lazy'/>
+					</div>
+					<p> 
+						Me nearly electrocuting myself.
+					</p>
+
+					<div class='spacer_misc'></div>
+
+					
+					
+
+
+
+					<!--    Adventures in Wood working?   -->
+					<div class='image_container'>
+						<img data-src='opt_image/bench.jpg'  class='row_img lazy'>
+
+						<img data-src='opt_image/lil_table.jpg' style='height: 325px;'  class='row_img lazy'>
+
+						<img data-src='opt_image/steam_bend.jpg'  class='row_img lazy'>
+					</div>
+
+					<p >
+						I've taken some dives into furniture making, that said my table was made more to survive a nuclear blast than coffee cups. The rightmost picture is probably the coolest, it turns out that if you saturate a piece of wood with hot steam you can <em>bend it</em> to whatever shape you want!
+					</p>
+
+					<div class='spacer_misc'></div>
+					
+
+
+
+
+					
+					<!--  VEX -->
+					<div class='image_container'>
+						<img data-src='opt_image/vex.jpg'  class='row_img lazy'>
+
+						<img data-src='opt_image/starstruck.jpg'  class='row_img lazy'>
+					</div>
+					
+					<p>
+						I have participated in VEX robotics throughout high school with the Battle Creek Area Math and Science Center team, and in 2016-2017 I was the captain. The robot that year consisted of a normal 4 wheel base, a 4 bar lift, and a large claw-type gripper to manipulate and lift game elements. The goal of the game that year was to take these large, oddly shaped stars and squishy cubes and fling them over a fence to the opponents’ side of the mat. I used Inventor to make diagrams and sketches of the robot in an attempt to be able to readily delegate work to other team members.
+					</p>
+		
+				</div>
+			</div>
+
+		</div>
+
+
+		<div style='height: 50px;'></div>
+		<div class='footer'></div>
+
+	</body>
+
+	
+</html>
