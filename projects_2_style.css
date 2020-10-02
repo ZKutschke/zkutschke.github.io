@@ -1,0 +1,367 @@
+/*
+layout of style modifiers
+.class{
+	Spatial things
+		margin
+		padding (top, bottom, left, right)
+		float
+		overflow
+	Structure 
+		height (min, max)
+		width (min, max)
+	Color and style
+		border 
+		border-radius
+		background-color
+	Font things
+		family
+		size
+		align
+		color
+	Misc other things
+}
+*/
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+
+	box-sizing: border-box;
+	text-decoration: none; 
+
+	outline: none;
+}
+
+strong{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+body{
+	/*Variable Declaration #66FCF1  #7FFEB3  #AFA3FE*/
+	--header_back_color:  #0B0C10;
+	--menu_color:      	  #66FCF1;
+	--hover_menu_color:   #45A29E;
+	--hover_tile_color:	  #e6fefd;
+	--header_text_color:  white;
+
+	--content_back_color: white;
+	background-color: var(--content_back_color);
+	--content_text_color: black;
+
+	--button_color:       var(--menu_color);
+	--hover_button_color: #45A29E;
+	--sidebar_text_color: black;
+	--button_height: 60px;
+
+	--caption_height: 40px;
+	--tile_spacing: 20px;
+	--tile_width: 325px;
+	--tile_height: calc(var(--tile_width) + var(--caption_height) + 15px);
+
+	--header_height: 90px;
+	--footer_height: 50px;
+	--footer_back_color:  #0B0C10;
+
+	font-family: Bookman, Arial, sans-serif;
+	font-size: 24px;
+	text-align: center;
+}
+
+
+button{
+	margin: 0;
+	padding: 0;
+	border: none;
+
+	font-family: Bookman;
+	font-size: 16px;
+}
+
+h2{
+	font-size: 40px;
+}
+
+h3{
+	font-size: 30px;
+}
+
+
+del{
+	text-decoration: line-through;
+}
+
+em{
+	font-style: italic; 
+}
+
+
+hr{
+	margin-top: 2px;
+	margin-bottom: 5px;
+
+	background-color: black;
+	height: 3px;
+}
+
+p{
+	font-size: 16px;
+	text-align: justify;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-top: 15px;
+	padding-bottom: 75px;
+}
+
+/*image stuff*/
+	img{
+		align-self: center;
+		max-height: 550px;
+		border-radius: 10px;
+	}
+
+	.row_img{
+		max-width: 450px;
+	}
+
+	.center{
+		display: block;
+		margin: 0 auto;
+		max-height: 400px;
+	}
+
+
+	.image_container{
+		display: flex;
+		justify-content: space-around;
+		flex-direction: row;
+		flex: 1;
+	}
+
+	.caption{
+		margin: 0 auto;
+		padding-top: 5px;
+
+		font-size: 25px;
+		text-align: center;
+		color: grey; 
+	}
+
+	.lazy{
+		max-height: 350px;
+	}
+
+
+/*Buttons/links behavior*/
+.button{
+	margin: 0 auto;
+	overflow: hidden;
+			
+	height: var(--button_height);
+	width: 200px;
+
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 4px solid var(--button_color);
+
+	background-color: var(--button_color);
+}
+			.button:hover{
+				background-color: var(--hover_button_color);
+				border-bottom: 4px solid var(--hover_button_color);
+			}
+			.button:visited:hover{
+				background-color: var(--hover_button_color);
+				border-bottom: 4px solid var(--hover_button_color);
+			}
+			.button:visited:active{
+				background-color: var(--hover_button_color);
+				border-bottom: 4px solid var(--hover_button_color);
+			}
+
+
+	.menu_button{
+		margin: 12px 2%;
+		padding: 10px;
+
+		width: 7%;
+		float: left;
+
+		font-size: 16px;
+		font-weight: bold;
+
+		color: var(--header_text_color);
+	}
+
+			.menu_button:hover{
+				color: var(--hover_menu_color);
+				cursor: pointer;
+			}
+			.menu_button:visited:hover{
+				color: var(--hover_menu_color);
+				cursor: pointer;
+			}
+			.menu_button:visited:active{
+				color: var(--hover_menu_color);
+				cursor: pointer;
+			}
+
+	a:link {
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+	}
+	a:visited {
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+		}
+	a:hover {
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+	}
+	a:active {
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+	}
+	a:visited:active{
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+	}
+	a:visited:hover{
+		color: var(--sidebar_text_color);
+		text-decoration: none;
+	}
+
+	.menu_selected{
+		border-style: solid;
+		border-radius: 10px;
+		border-color: var(--menu_color);
+		color: var(--menu_color);
+	}
+
+
+
+
+
+
+/*Main sections*/
+	.header{
+		height: var(--header_height);
+		padding-top: 10px;
+
+		background-color: var(--header_back_color);
+
+		color: var(--header_text_color);
+
+
+	}
+
+		.menu_container{
+			padding-top: 10px;
+			padding-bottom: 0px;
+			overflow: hidden;
+		}
+
+
+
+	.banner{
+  		background: linear-gradient(to bottom, black 0%, rgba(22, 22, 22, 0.0) 35%, rgba(0, 0, 0, 0.1) 75%, white 100%), url('iceland_background.jpg');
+		
+		background-size: cover;
+		height: 110vh; 
+		padding-top: 110px;
+		color: var(--header_text_color);
+		}
+
+
+	.middle{
+		overflow: hidden;
+		margin-right: auto;
+		margin-left: auto;
+
+		background-color: var(--content_back_color);
+		color: var(--content_text_color);
+
+		width: calc(var(--tile_width)*4 + var(--tile_spacing)*3);
+		}
+
+		.section_header{
+			height: 30px;
+			margin-bottom: 5px;
+			font-weight: bold;
+			padding-left: 5px;
+			font-size: 26px;
+
+			text-align: left;
+		}
+
+		.section_row{
+			height: var(--tile_height);
+
+			display: flex;
+			justify-content: space-around;
+			flex-direction: row;
+		}
+
+			.section_tile{
+				height: 100%;
+				width: var(--tile_width);
+				text-align: center;
+				border-radius: 20px;
+			}
+
+				.section_tile:hover{
+					background-color: var(--hover_tile_color);
+					cursor: pointer;
+				}
+
+			.tile_image{
+				max-width: calc(var(--tile_width) - 20px);
+				max-height: calc(var(--tile_height) - var(--caption_height) - 10px);
+				margin-top: 10px;
+				border-radius: 15px;			
+			}
+
+			.tile_caption{
+				height: var(--caption_height);
+				font-size: 16px;
+				padding-top: calc(var(--caption_height)/3);
+				font-weight: bold;
+			}
+
+		.project_page{
+			min-height: calc(100vh - var(--header_height) - var(--footer_height));
+		}
+
+		.content_title{
+			text-align: left;
+			font-size: 30px;
+			font-weight: bold;
+			padding-left: 10px;
+		}
+
+		.spacer{
+			height: 100px;
+		}
+
+		.spacer_misc{
+			height: 50px;
+		}
+
+		.row_spacer{
+			height: 10px;
+		}
+
+		
+
+	.footer{
+		padding-top: 30px;
+
+		height: var(--footer_height);
+
+		background-color: var(--footer_back_color);
+
+		font-size: 16px;
+		color: grey;
+	}
