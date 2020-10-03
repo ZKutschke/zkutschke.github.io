@@ -236,6 +236,7 @@ p{
 	.menu_selected{
 		border-style: solid;
 		border-radius: 10px;
+		min-width: 84px;
 		border-color: var(--menu_color);
 		color: var(--menu_color);
 	}
