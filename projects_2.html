@@ -161,8 +161,8 @@
 		<script>
 				//Close all but top div, highlight top buttton
 				function initialize(){
-					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b']; 
-					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d']; 
+					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b', 'icl_b','2013_b', 'gear_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b']; 
+					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d', 'icl_d','2013_d',  'gear_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d']; 
 					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
 
 					for(var i=1; i<div_list.length; i++){
@@ -219,7 +219,7 @@
 						</div>
 						
 
-						<a href='resume.pdf' target='_blank'>
+						<a href='files/resume.pdf' target='_blank'>
 							<div class='menu_button'>
 								Resume
 							</div>
@@ -293,13 +293,38 @@
 						<hr>
 
 						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('icl_b', 'icl_d')">
+								<img src="opt_image/thumbnails2/battery_cross_sq.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									PINNs for Battery Modeling 
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2013_b', '2013_d')">
+								<img src="opt_image/thumbnails2/doug_title.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									2.013: Engineering Systems Design
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('gear_b', 'gear_d')">
+								<img src="opt_image/thumbnails2/2671_unlabeled.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Drip Irrigation App
+								</div>
+							</div>
+
 							<div class='section_tile' onclick="show_hide('sevt_b', 'sevt_d')">
 								<img src="opt_image/thumbnails2/nimb_cropped.jpg" class='tile_image'>
 								<div class='tile_caption'>
 									Solar Electric Vehicle Team
 								</div>
 							</div>
+						</div>
 
+
+
+						<div class='section_row'>
 							<div class='section_tile' onclick="show_hide('2671_b', '2671_d')">
 								<img src="opt_image/thumbnails2/2671_unlabeled.jpg" class='tile_image'>
 								<div class='tile_caption'>
@@ -319,6 +344,12 @@
 								<div class='tile_caption'>
 									2.007: Design and Manufacturing I
 								</div>
+							</div>
+
+
+							<div class='section_tile place placeholder'>
+								<div class='tile_image'></div>
+								<div class='tile_caption'></div>
 							</div>
 						</div>
 
@@ -637,6 +668,101 @@
 							 The data I collected was sent to various engineering and company leads and used in assigning a new leak rate test for the gears so that the company would not output as many leaking gear assemblies/differentials.
 						</p>
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--         ----  ICL          -----                   
+					<div id='icl_d'>
+						<h3 class='content_title'>
+							Physics-Informed Neural Networks for Thermal Modeling
+						</h3>
+
+						<p>
+							insert text ere
+						</p>
+
+						<img src='opt_image/icl_1d.jpg'  class='center'/>
+
+						<img data-src='opt_image/icl_1d_fail.jpg'  class='center lazy'/>
+
+						<img data-src='opt_image/icl_1d_narrowing.jpg'  class='center lazy'/>
+
+						<img data-src='opt_image/icl_2d_iso.jpg'  class='center lazy'/>
+
+						<img data-src='opt_image/icl_2d_iso_results.jpg'  class='center lazy'/>
+
+						<img data-src='opt_image/icl_2d_aniso.jpg'  class='center lazy'/>
+
+						<img data-src='opt_image/icl_2d_aniso_results.jpg'  class='center lazy'/>
+
+					</div>
+
+
+
+
+
+
+-->
+
+
+
+	<!--         ----  2.013          -----                   -->
+					<div id='2013_d'>
+						<h3 class='content_title'>
+							2.013: Engineering Systems Design
+						</h3>
+
+						<p>
+							For my senior capstone I was a part of a team of 27 students tasked with designing a new unmanned underwater vehicle (UUV). The system requirements are shown below, but the main premise was to make an easy to deploy submarine that could operate autonomously in the water for up to 30 days continuously, all while maintaining a price point of under $50k (a previous iteration of the class had designed a short range UUV, RAPID, for this price the previous year). 
+						</p>
+
+						<img src='opt_image/doug_reqs.png' class='center'/>
+
+						<p>
+							I was the lead for the structures subteam, responsible for designing the hull and packaging/assembly of the interior components. After a couple of months of researching, designing, and reviewing, we came up with the Long Endurance 1000m-rated Deep Ocean Underwater Glider, affectionately Dubbed DOUG LE-1000. 
+						</p>
+
+						<img data-src='opt_image/doug_iso.png' class='center lazy'/>
+
+						<p>
+							The overall design is fairly complicated and you can read more about it in our hastily written <a href='files/2013_FA2020_WP.pdf' class='file_link' target='_blank'>white paper </a>. It includes a main buoyancy engine, and smaller trimming engine, a propeller, and glider wings to suit a variety of movement functionalities and use cases. To meet the 30 day continuous mission time while still maintaining a light and slim overall profile we looked into using aluminum as our principle fuel source. As it turns out aluminum reacts with water to produce hydrogen, though normally the oxide layer inhibits this. If you alloy it with some gallium and other metals it reacts much more readily though. The hydrogen produced goes to inflating the main buoyancy engine in the front of the vehicle, and once the vessel rises to the surface it's used by a PEM cell to recharge a small pack of batteries. There's also a collapsable snorkel to raise an antenna for iridium communications, GPS, and air line. There's also some pretty innovative navigation, communications, and automated swarming tech built into it. 
+						</p>
+
+						<img data-src='opt_image/doug_labeled_parts.png'  class='center lazy'/>
+
+						<p>
+							 To increase the its buckling capacity and to provide a mounting surface for the internal component rack we designed the hull with a number of ribs throughout. And to allow for the vehicle to maneuver we slapped the battery pack on a set of rails so the center of mass could be translated and rotated within the hull. 
+						</p>
+
+						<img data-src='opt_image/doug_cross.png'  class='center lazy'/>
+
+						<p>
+							The wingspan is about 6 feet, with a 10 foot length and 8 inch outer diameter. It also only weighs about 175 pounds, and the wings are easily removable for either replacement or for ease of transporation/storage/deployment. This tighter packaging was sought to eliminate the large overhead involved with deploying and recovering large vessels. The usable inner diameter of the hull is cut down to between 5.5-6.5 inches with the ribbing and rails. 
+						</p>
+
+						<img data-src='opt_image/doug_shifter.png' class='center lazy' style='max-width: 700px;'/>
+
+						<p>
+							As subteam lead I mainly coordinated between other subteams to make sure overall requirements were met and the vehicle still theoretically functioned. I also got to fill in various areas such as designing out the battery holder and shifter above, though it was fairly simple. 
+						</p>
+
+						<img data-src='opt_image/doug_end_caps.png' class='center lazy' style='max-width: 700px;'/>
+
+						<p>
+							To make room in the fairings for the bladder, snorkel, and propeller components we made the end caps an inverted hemisphere, which still distributes the load well enough to reduce sharp stress concentrations at the ends. They also look a little like swiss cheese due to all of the inlet and outlet ports going to the sensor package and the buoyancy engine/fuel tank. 
+						</p>
+
+					</div>
+
 
 
 
@@ -1207,7 +1333,6 @@
 		
 				</div>
 			</div>
-
 		</div>
 
 
