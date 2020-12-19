@@ -109,8 +109,8 @@ hr{
 p{
 	font-size: 16px;
 	text-align: justify;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 75px;
+	padding-right: 75px;
 	padding-top: 15px;
 	padding-bottom: 75px;
 }
@@ -233,6 +233,31 @@ p{
 		text-decoration: none;
 	}
 
+	.file_link:link {
+		color: blue;
+		text-decoration: none;
+	}
+	.file_link:visited{
+		color: purple;
+		text-decoration: none;
+		}
+	.file_link:hover{
+		color: cyan;
+		text-decoration: none;
+	}
+	.file_link:active{
+		color: red;
+		text-decoration: none;
+	}
+	.file_link:visited:active{
+		color: red;
+		text-decoration: none;
+	}
+	.file_link:visited:hover{
+		color: lavender;
+		text-decoration: none;
+	}
+
 	.menu_selected{
 		border-style: solid;
 		border-radius: 10px;
@@ -315,6 +340,11 @@ p{
 				.section_tile:hover{
 					background-color: var(--hover_tile_color);
 					cursor: pointer;
+				}
+
+				.placeholder:hover{
+					background-color: var(--background_color);
+					cursor: auto;
 				}
 
 			.tile_image{
