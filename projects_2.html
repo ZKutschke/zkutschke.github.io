@@ -161,8 +161,9 @@
 		<script>
 				//Close all but top div, highlight top buttton
 				function initialize(){
-					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b', 'icl_b','2013_b', 'gear_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b']; 
-					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d', 'icl_d','2013_d',  'gear_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d']; 
+					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b', 'gear_b']; 
+					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d', 'gear_d']; 
+					//'icl_d','2013_d', 'gear_d',
 					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
 
 					for(var i=1; i<div_list.length; i++){
@@ -179,7 +180,7 @@
 				//Transition when Page loads
 					// Everything but IE
 					window.addEventListener("load", function() {
-		 	  		    showPage();
+		 	  			showPage();
 					    initialize();
 					}, false); 
 
@@ -308,7 +309,7 @@
 							</div>
 
 							<div class='section_tile' onclick="show_hide('gear_b', 'gear_d')">
-								<img src="opt_image/thumbnails2/2671_unlabeled.jpg" class='tile_image'>
+								<img src="opt_image/thumbnails2/coming_soon.png" class='tile_image'>
 								<div class='tile_caption'>
 									Drip Irrigation App
 								</div>
@@ -680,29 +681,57 @@
 
 
 
-	<!--         ----  ICL          -----          -->         
+	<!--         ----  ICL          -----         -->          
 					<div id='icl_d'>
 						<h3 class='content_title'>
 							Physics-Informed Neural Networks for Thermal Modeling
 						</h3>
 
 						<p>
-							insert text ere
+							As part of the Impact and Crashworthiness Lab at MIT I did some research into using physics-informed neural networks (PINNs) to model lithium-ion batteries and packs undergoing internal short circuit(s). The original plan was to scale up individual thermal and electro-chemical models, merge them at the layer level, and then scale up the entire combined model until I could predict entire pack performance. Unfortunately I only had time get a layer level thermal model working, though I got to learn a lot about batteries as well as machine learning. I also wrote my <a href='files/zkutschke_thesis.pdf' class='file_link' target='_blank'>Bachelor's thesis </a> on my results. 
 						</p>
 
 						<img src='opt_image/icl_1d.jpg'  class='center'/>
 
+						<p>
+							I started off with a 1D unsteady heat transfer model on a semi-infinite slab of material. The results for such are fairly simple and easy to verify against. 
+						</p>
+
 						<img data-src='opt_image/icl_1d_fail.png'  class='center lazy'/>
+
+						<p>
+							I tried manipulating a handful of network/model parameters to get the output closer to the analytical solution. Above is the sorry results after trying a few different activation functions. 
+						</p>
 
 						<img data-src='opt_image/icl_1d_narrowing.png'  class='center lazy'/>
 
+						<p>
+							After screwing around for a while, I figured out that I could attenuate portions of the output via their loss functions. Much of the previous results showed no real gradient and drastically overestimated temperatures, so I tried weighting the overall PDE loss more and the x=0 boundary condition loss (BC0) less. The network output quickly approached the analytical model. 
+						</p>
+
 						<img data-src='opt_image/icl_2d_iso.png'  class='center lazy'/>
+
+						<p>
+							My next step was to make a 2D model, so I just took another semi-infinite slab with a convective heat transfer boundary condition on the top side. 
+						</p>
 
 						<img data-src='opt_image/icl_2d_iso_results.png'  class='center lazy'/>
 
+						<p>
+							I setup a parallel model in COMSOL for comparison and the results looked less than stellar. It did not appear that I could fudge the loss weights enough to coerce the network output to converge onto the COMSOL model. 
+						</p>
+
 						<img data-src='opt_image/icl_2d_aniso.png'  class='center lazy'/>
 
+						<p>
+							Regardless of the lack of success with the 2D isotropic model, I still went ahead and made a 2D anisotropic model. The model was meant to be the final step before being able to make a thermal model of an entire battery, so I made the dimensions and characteristics close to those in an actual battery. 
+						</p>
+
 						<img data-src='opt_image/icl_2d_aniso_results.png'  class='center lazy'/>
+
+						<p>
+							The results of the 2D anisotropic model look much more promising than for the isotropic one. With some finer tuning it appears that the network output should converge onto the COMSOL model. For my next step I planned to make a layer level electro-chemical model and combine/couple it with the thermal model, but I ran out of time before graduating.  
+						</p>
 
 					</div>
 
@@ -766,14 +795,18 @@
 
 
 
-	<!--      ----    SEVT               ----                     -->
-					<div id='gear_d'>
-						<p>
-							text soon to go here
+
+
+
+	<!--      ----  Gear                ----      -->
+					<div id = 'gear_d'>
+						<p style='min-height: 90vh;'>
+							I did some work for the Drip Irrigation portion of MIT's Global Engineering and Research Lab that involved making an Android app for their product. I'll have more info on it once I <del>stop procrastinating</del> have time. 
 						</p>
 					</div>
-	
-					
+
+
+
 
 
 
