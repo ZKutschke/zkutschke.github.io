@@ -158,39 +158,36 @@
 
 
  <!---- -----      Show/hide page + lazy loader    ---- ---- -->
-		<script>
+		<script>		
+				//Transition when Page loads
+				setTimeout(hide_page, 1);
+					
+				window.addEventListener("load", function() {	// Everything but IE
+		 	  		showPage();
+					initialize();
+				}, false); 
+
+				window.attachEvent("onload", function() {	// IE
+					showPage();
+					initialize();
+				});
+
 				//Close all but top div, highlight top buttton
 				function initialize(){
 					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b', 'gear_b']; 
 					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d', 'gear_d']; 
-					//'icl_d','2013_d', 'gear_d',
+					
 					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
 
 					for(var i=1; i<div_list.length; i++){
 						document.getElementById(div_list[i]).style.display='none';
 					}
 				}
-
-
-				//Use for Testing
-				//setInterval(showPage, 1000);
-
-
 				
-				//Transition when Page loads
-					// Everything but IE
-					window.addEventListener("load", function() {
-		 	  			showPage();
-					    initialize();
-					}, false); 
-
-					// IE
-					window.attachEvent("onload", function() {
-					    showPage();
-					    initialize();
-					});
-
-		
+				//Hide entire non-loading page
+				function hide_page(){
+					document.getElementById('entire_page').style.display='none';
+				}
 
 				//Define which elements to show and hide
 				function showPage() {
@@ -1377,11 +1374,10 @@
 		
 				</div>
 			</div>
-		</div>
-
-
+	
 		<div style='height: 50px;'></div>
 		<div class='footer'></div>
+		</div>
 
 	</body>
 
