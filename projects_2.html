@@ -4,12 +4,9 @@
 <!------------------------------------------------------------
 	Steps to add a project:
 		-Add button and thumbnail to Sidebar
-
 		-Add div element/content for page to Page Content
-
 		-Add button and div tags to JS script 
 			-Add to initialize() in head 
-
 ----------------------------------------------------------->
 
 
@@ -174,8 +171,8 @@
 
 				//Close all but top div, highlight top buttton
 				function initialize(){
-					var button_list = ['project_select_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b']; 
-					var div_list = ['project_select_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d']; 
+					var button_list = ['project_select_b','pwc2_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b']; 
+					var div_list = ['project_select_d','pwc2_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d']; 
 					
 					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
 
@@ -250,6 +247,13 @@
 						<hr>
 						
 						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('pwc2_b', 'pwc2_d')">
+								<img src="opt_image/thumbnails2/pwc2_crash.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Pure Watercraft, 2021
+								</div>
+							</div>
+
 							<div class='section_tile' onclick="show_hide('pwc_b', 'pwc_d')">
 								<img src="opt_image/thumbnails2/pwc_motor.jpg" class='tile_image'>
 								<div class='tile_caption'>
@@ -270,12 +274,31 @@
 									Musashi Auto Parts, 2018
 								</div>
 							</div>
+						</div>
 
+
+						<div class = 'section_row'>
 							<div class='section_tile' onclick="show_hide('map1_b', 'map1_d')">
 								<img src="opt_image/thumbnails2/leak_gear.jpg" class='tile_image'>
 								<div class='tile_caption'>
 									Musashi Auto Parts, 2017
 								</div>
+							</div>
+
+							<div class='section_tile placeholder'>
+								<div class='tile_image'></div>
+								<div class='tile_caption'></div>
+							</div>
+
+							
+							<div class='section_tile placeholder'>
+								<div class='tile_image'></div>
+								<div class='tile_caption'></div>
+							</div>
+
+							<div class='section_tile placeholder'>
+								<div class='tile_image'></div>
+								<div class='tile_caption'></div>
 							</div>
 						</div>
 
@@ -411,16 +434,86 @@
 
 
 
+	<!--      ----    PURE WATERCRAFT 2020   ----                     -->
+					<div id='pwc2_d'>
+						<h3 class='content_title'>
+							Pure Watercraft, 2021
+						</h3>
+
+						<p>
+							I had opportunity to return to Pure Watercraft (PWC) during much of 2021 as a mechanical engineering intern. This time around I gained a lot more hands on experience with mechanical and machine design as I built up various pieces of equipment and test fixtures. 
+						</p>
+
+						<img data-src='opt_image/dyno_alone.jpg'  class=' center lazy' />
+
+						<p>
+							One of my main projects was to make an end-of-line dynamometer for fully built outboards. Prior to this unit there was no real means to verify the complete outboard without installing it on a boat and putting around a lake for a while. It utilizes one of PWC's motors and controllers as an electronic load for the unit under test and is meant to lock said test unit in place while it's on its modified engine stand (not pictured). I designed most of the mechanical elements (short of the driveshaft and absorber block), the cooling system, and the control circuitry while outsourcing the control software. I also performed a lot of analysis to ensure it could mate with the outboard getting tested and wouldn't blow up unexpectedly. Due to a long list of complications with our supply chain I did not get to finish the project, but handed it off at the point where it was ready for final assembly and troubleshooting. 
+						</p>
+
+						<div class='image_container'>
+								<img data-src='opt_image/Painted_bottom_frame.jpg'  class='lazy' />
+
+								<img data-src='opt_image/painted_top_frame.jpg' class='lazy' />
+						</div>
+
+						<p>
+							These are the bottom (left) and top (right) frames for the structure of the dynomometer. Due to several complications with our local supply chain I ended up doing all of the welding and painting for the frame (which was actually a lot of fun). 
+						</p>
+
+						<div class='image_container'>
+								<img data-src='opt_image/dyno_bottom_assembly.jpg'  class='lazy' />
+
+								<img data-src='opt_image/pwc_dyno_box.jpg' class='lazy' />
+						</div>
+
+						<p>
+							I assembled and wired everything I could with the parts I had, though the final assembly and troubleshooting needed to wait on a handful of components to come in. 
+						</p>
+
+						<div class='image_container'>
+								<img data-src='opt_image/raw_trailer.jpg'  class='lazy' />
+
+								<img data-src='opt_image/painted_trailer.jpg' class='lazy' />
+						</div>
+
+						<p>
+							I also got the chance to setup PWC's first round of log strike testing on their latest line of outboards. Relating the entire test plan here would probably violate my NDA, but to meet the company's budget we utilized a modified boat trailer to slam a couple of test outboards into a massive concrete block at pretty decent speeds. The trailer itself was modified in an attempt to allow the outboard's dynamics to mimic that of a boat hitting a submerged object and/or make the rig more compliant. I also got to further hone my welding with all of the modifications to the trailer. 
+						</p>
+
+						<video width="640" height="360" controls muted>
+							<source src='opt_image/PWC_35MPH.mp4' type='video/mp4'>
+						Your browser does not support this video. 
+						</video>
+
+						<p>
+							We collected a ton of pressure, strain, and acceleration data from the testing. At the end of the day the outboard passed every impact test with flying colors. 
+						</p>
+						
+						<div class='image_container'>
+								<img data-src='opt_image/bons.jpg' class='lazy'/>
+
+								<img data-src='opt_image/bon_closed.jpg' class='lazy' />
+						</div>
+
+						<p>
+							Finally, my last major project was building up a series of bed of nails fixtures for our various PCBs. I tried to revamp the previous design process to completely streamline the design and assembly process. Instead of taking a full 3-5 days of work to CAD, assembly, and troubleshoot the BONs it can now be done in as little as a day. The fixture itself is also vastly more robust and easy to use than previous versions. 
+						</p>
+
+					</div>
+						
 
 
 
 
 
 
-	<!--      ----    PURE WATERCRAFT    ----                     -->
+
+
+
+	<!--      ----    PURE WATERCRAFT 2020   ----                     -->
 					<div id='pwc_d'>
 						<h3 class='content_title'>
-							Pure Watercraft
+							Pure Watercraft, 2020
 						</h3>
 						
 						<p >
@@ -816,9 +909,6 @@
 							I did some work for the Drip Irrigation portion of MIT's Global Engineering and Research Lab that involved making an Android app for their product. I'll have more info on it once I <del>stop procrastinating</del> have time. 
 						</p>
 					</div>
-
-
-
         -->
 
 
