@@ -171,8 +171,8 @@
 
 				//Close all but top div, highlight top buttton
 				function initialize(){
-					var button_list = ['project_select_b','pwc2_b','pwc_b','bdmed_b','map2_b','map1_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b']; 
-					var div_list = ['project_select_d','pwc2_d','pwc_d','bdmed_d','map2_d','map1_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d']; 
+					var button_list = ['project_select_b','pwc2_b','pwc_b','bdmed_b','map2_b','map1_b','msynth_b','2120_b','sevt_b','2671_b','2810_b','2007_b','casting_b','cannons_b','h2ouse_b','misc_b','icl_b','2013_b']; 
+					var div_list = ['project_select_d','pwc2_d','pwc_d','bdmed_d','map2_d','map1_d','msynth_d','2120_d','sevt_d','2671_d','2810_d','2007_d','casting_d','cannons_d','h2ouse_d','misc_d','icl_d','2013_d']; 
 					
 					document.getElementById(button_list[0]).className = 'menu_button menu_selected';
 
@@ -202,11 +202,11 @@
 					<div class='menu_container'>
 						<h2 style='padding-left: 30px; width: 50vw; text-align: left; float: left;'> Zach Kutschke </h2>
 
-						<a href='about_2.html'>
+					<!--	<a href='about_2.html'>
 							<div class='menu_button'>
 								About
 							</div>
-						</a>
+						</a> -->
 
 					
 						<div class='menu_button' id='project_select_b' onclick="show_hide('project_select_b', 'project_select_d')">
@@ -314,17 +314,31 @@
 						<hr>
 
 						<div class = 'section_row'>
+							<div class='section_tile' onclick="show_hide('msynth_b', 'msynth_d')">
+								<img src="opt_image/thumbnails2/msynth_logo.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Mechanosynthesis Group, 2021-2023
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2120_b', '2120_d')">
+								<img src="opt_image/thumbnails2/2120_thumbnail0.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									2.120: Introduction to Robotics, 2022
+								</div>
+							</div>
+
 							<div class='section_tile' onclick="show_hide('icl_b', 'icl_d')">
 								<img src="opt_image/thumbnails2/battery_cross_sq.jpg" class='tile_image'>
 								<div class='tile_caption'>
-									PINNs for Battery Modeling 
+									PINNs for Battery Modeling, 2020 
 								</div>
 							</div>
 
 							<div class='section_tile' onclick="show_hide('2013_b', '2013_d')">
 								<img src="opt_image/thumbnails2/doug_title.jpg" class='tile_image'>
 								<div class='tile_caption'>
-									2.013: Engineering Systems Design
+									2.013: Engineering Systems Design, 2020
 								</div>
 							</div>
 							
@@ -336,30 +350,30 @@
 								</div>
 							</div>
 							-->
-							
-							<div class='section_tile' onclick="show_hide('sevt_b', 'sevt_d')">
-								<img src="opt_image/thumbnails2/nimb_cropped.jpg" class='tile_image'>
-								<div class='tile_caption'>
-									Solar Electric Vehicle Team
-								</div>
-							</div>
-							
-							<div class='section_tile' onclick="show_hide('2671_b', '2671_d')">
-								<img src="opt_image/thumbnails2/2671_unlabeled.jpg" class='tile_image'>
-								<div class='tile_caption'>
-									2.671: Measurement and Instrumentation
-								</div>
-							</div>
 						</div>
 
 
 
 						<div class='section_row'>
+							<div class='section_tile' onclick="show_hide('sevt_b', 'sevt_d')">
+								<img src="opt_image/thumbnails2/nimb_cropped.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									Solar Electric Vehicle Team, 2018-2020
+								</div>
+							</div>
+
+							<div class='section_tile' onclick="show_hide('2671_b', '2671_d')">
+								<img src="opt_image/thumbnails2/2671_unlabeled.jpg" class='tile_image'>
+								<div class='tile_caption'>
+									2.671: Measurement and Instrumentation, 2019
+								</div>
+							</div>
+
 							
 							<div class='section_tile' onclick="show_hide('2810_b', '2810_d')">
 								<img src="opt_image/thumbnails2/2810_1_cropped.jpg" class='tile_image'>
 								<div class='tile_caption'>
-									2.810: Manufacturing Processes and Systems
+									2.810: Manufacturing Processes and Systems, 2019
 								</div>
 							</div>
 
@@ -367,21 +381,17 @@
 							<div class='section_tile' onclick="show_hide('2007_b', '2007_d')">
 								<img src="opt_image/thumbnails2/2007_trans1_cropped.jpg" class='tile_image'>
 								<div class='tile_caption'>
-									2.007: Design and Manufacturing I
+									2.007: Design and Manufacturing I, 2019
 								</div>
 							</div>
 							
-							
-							<div class='section_tile placeholder'>
-								<div class='tile_image'></div>
-								<div class='tile_caption'></div>
-							</div>
 
-							
+							<!--
 							<div class='section_tile placeholder'>
 								<div class='tile_image'></div>
 								<div class='tile_caption'></div>
 							</div>
+							-->
 						</div>
 
 
@@ -399,21 +409,21 @@
 							<div class='section_tile' onclick="show_hide('casting_b', 'casting_d')">
 								<img data-src="opt_image/thumbnails2/old_nozzle_run_cropped.jpg" class='tile_image lazy'>
 								<div class='tile_caption'>
-									Metal Casting
+									Metal Casting, 2016-2018
 								</div>
 							</div>
 
 							<div class='section_tile' onclick="show_hide('cannons_b', 'cannons_d')">
 								<img data-src="opt_image/thumbnails2/pvhc_down_barrel_cropped.jpg" class='tile_image lazy'>
 								<div class='tile_caption'>
-									Cannons
+									Cannons, 2017
 								</div>
 							</div>
 
 							<div class='section_tile' onclick="show_hide('h2ouse_b', 'h2ouse_d')">
 								<img data-src="opt_image/thumbnails2/h2ouse_logo_resized.png" class='tile_image lazy'>
 								<div class='tile_caption'>
-									Conrad Challenge: H<sub>2</sub>Ouse
+									Conrad Challenge: H<sub>2</sub>Ouse, 2017
 								</div>
 							</div>
 
@@ -781,8 +791,81 @@
 
 
 
+	<!--        -----    Msynth ----             -->
+				<div id='msynth_d'>
+					<h3 class='content_title'>
+						Mechanosynthesis Group
+					</h3>
+
+					<p>
+						I'm currently getting my master's while working with MIT's Mechanosynthesis Group. I have some work in progress pictures to follow but will update this page once I have more or less completed my projects and research. 
+					</p>
+
+					<img src='opt_image/griggs_LPBF_dia.jpg'  class='center'/>
+
+					<p>
+						Most of my work in the group is centered around metal 3D printing. I have learned a ton about design as well as the fundamental details of selective laser melting (SLM). My initial work in the group mainly revolved around comissioning a SLM system (dubbed HAMR2) that another labmate, Ryan Penny, had worked prior to the pandemic/campus getting shut down. I spent a lot of time pouring over his work to figure out the ins and outs of his design as well as how the gas system, software, and optical drivetrain operated. 
+					</p>
+
+					<img src='opt_image/HAMR2 servo1.jpg'  class='center'/>
+
+					<p>
+						Aside from getting HAMR2 operational, I also worked on designing and developing another SLM system with a couple of key characteristics. The printer was to be a sort of hybrid setup with an inkjet printer included in order to enable printing compositional gradients. The system (dubbed HAMR3) was also meant to print newly developed refractory alloys (namely of niobium). In order to avoid the cracking and defects associated with those alloys, the build volume of the printer needed to be maintained between 500-600C. 
+					</p>
+
+					<img data-src='opt_image/ITP_labelled.jpg'  class='center lazy'/>
+
+					<p>
+						Since we would be jetting on top of a very hot surface, the group thought it would be a good idea to create a separate test stand for the inkjet printhead alone and characterize its interaction with a heated surface. The setup above includes the printhead, heated surface (on a set of XY servos), all of the supporting electronics, and a high speed camera to view the interaction. The printhead itself is designed with a thermoelectric cooler such that the inkjet nozzle's temperature is controllable, and a stainless steel cover should shield the nozzle orifice from most of the thermal radiation from the substrate. 
+					</p>
+
+					<img data-src='opt_image/HAMR3_mid_build.jpg'  class='center lazy'/>
+
+					<p>
+						HAMR3 itself is in the middle of getting built, though so far it's looking fantastic in my opinion. More details to follow when I'm not elbows deep in a pressure vessel. 
+					</p>
+				</div>
 
 
+
+
+
+	<!--          ---------           2.120    ----------        -->
+				<div id='2120_d'>
+					<h3 class='content_title'>
+						2.120: Introduction to Robotics
+					</h3>
+
+						<p>
+							I took a class on the fundamentals of robotics. In addition to getting to learn all of the math and analysis behind the kinematics and dynamics of robotic systems I also got a lot more hands on experience with machine vision and machine learning. 
+						</p>
+
+						<div class="image_container">
+							<img src='opt_image/2120_start.jpg' class='center'/>
+							<img src='opt_image/2120_dump.jpg' class='center'/>
+						</div>
+
+						<p>
+							The class projects worked toward a final competition, whereby the teams' robots would have to navigate an obstacle course, pickup some shredded rubber bits, and dump them in a collection bucket. Originally it was intended that all of this would be done autonomously but almost none of the teams were able to work through the software side of things well enough to get full autonomous function. 
+						</p>
+
+						<div class="image_container">
+							<img data-src='opt_image/yoda_og.jpg' class="center lazy">
+							<img data-src='opt_image/mono_yoda.jpg' class="center lazy">
+							<img data-src='opt_image/Sobel_yoda.jpg' class="center lazy">
+						</div>
+
+						<p></p>
+
+						<div class="image_container">
+							<img data-src='opt_image/Bilateral_yoda.jpg' class="center lazy">
+							<img data-src='opt_image/otsu_yoda.jpg' class="center lazy">
+						</div>
+
+						<p>
+							Thanks to the class I now have a number of ways to tarnish Yoda's image, to include the Sobel operator, bilateral filtering, and otsu thresholding. In addition to basic filtering, thresholding, and morphological operations I got to learn a lot about optical flow/tracking and machine learning. 
+						</p>
+					</div>
 
 
 
