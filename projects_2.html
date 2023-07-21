@@ -798,32 +798,83 @@
 					</h3>
 
 					<p>
-						I'm currently getting my master's while working with MIT's Mechanosynthesis Group. I have some work in progress pictures to follow but will update this page once I have more or less completed my projects and research. 
+						I worked on my master's with the Mechanosynthesis Group at MIT under the brilliant John Hart. For a more detailed view of my projects in the lab here's a link to my thesis, what follows is a more high level overview of the work I contributed to. The Mechanosynthesis Group had a range of projects pushing the limits of different 3D printing technologies, and so my work centered around developing selective laser melting (SLM) systems.
 					</p>
 
 					<img src='opt_image/griggs_LPBF_dia.jpg'  class='center'/>
 
 					<p>
-						Most of my work in the group is centered around metal 3D printing. I have learned a ton about design as well as the fundamental details of selective laser melting (SLM). My initial work in the group mainly revolved around comissioning a SLM system (dubbed HAMR2) that another labmate, Ryan Penny, had worked prior to the pandemic/campus getting shut down. I spent a lot of time pouring over his work to figure out the ins and outs of his design as well as how the gas system, software, and optical drivetrain operated. 
+						 The SLM process consists of spreading a uniform layer of powdered metal over a build surface and then guiding a laser over the fresh powder to melt select regions together. After shooting it with a laser more powder is spread out and the process repeats layer by layer to create parts. 
 					</p>
 
-					<img src='opt_image/HAMR2 servo1.jpg'  class='center'/>
+					<div class = "image_container">
+						<img src='opt_image/HAMR2 servo1.jpg'  class='center'/>
+						<img src='opt_image/HAMR2 servos2.jpg'  class='center'/>
+						<img src='opt_image/hamr2overall.jpg'  class='center'/>
+					</div>
+
+					<p>
+						Initially I worked on comissioning a SLM system (dubbed HAMR2) that another labmate, Ryan Penny, had worked prior on to the pandemic/campus getting shut down. I spent a lot of time pouring over his work to figure out the ins and outs of his design. I also spent an inordinate amount of time reworking the gas system, the software, and the electronics. 
+					</p>
+
+					<div class = "image_container">
+						<img data-src='opt_image/hamr2cab.jpg'  class='center lazy'/>
+						<img data-src='opt_image/hamr2outside.jpg'  class='center lazy'/>
+					</div>
+
+					<p>
+						I also worked on narrowing down some set of optimal print parameters for using HAMR2 on 316L Stainless Steel. The first stab at a parameter sweep I took was done utilizing normalized enthalpy values for the material and parameters. From this sample set I worked with Reimar Weissbach to section, polish, etch, and image the samples; and from these images I did some processing to come up with a proxy measurement for porosity. 
+					</p>
+
+					<img data-src='opt_image/hamr2sectioning.png' class='center lazy'/>
 
 					<p>
 						Aside from getting HAMR2 operational, I also worked on designing and developing another SLM system with a couple of key characteristics. The printer was to be a sort of hybrid setup with an inkjet printer included in order to enable printing compositional gradients. The system (dubbed HAMR3) was also meant to print newly developed refractory alloys (namely of niobium). In order to avoid the cracking and defects associated with those alloys, the build volume of the printer needed to be maintained between 500-600C. 
 					</p>
 
-					<img data-src='opt_image/ITP_labelled.jpg'  class='center lazy'/>
+					<img data-src='opt_image/inkjet_overview.png'  class='center lazy'/>
 
 					<p>
-						Since we would be jetting on top of a very hot surface, the group thought it would be a good idea to create a separate test stand for the inkjet printhead alone and characterize its interaction with a heated surface. The setup above includes the printhead, heated surface (on a set of XY servos), all of the supporting electronics, and a high speed camera to view the interaction. The printhead itself is designed with a thermoelectric cooler such that the inkjet nozzle's temperature is controllable, and a stainless steel cover should shield the nozzle orifice from most of the thermal radiation from the substrate. 
+						Since we would be jetting on top of a very hot surface, I built a separate test stand for the inkjet printhead alone and to characterize its interaction with a heated surface. The setup includes the printhead, heated surface (on a set of XY servos), all of the supporting electronics, and a high speed camera to view the interaction. The printhead itself is designed with a thermoelectric cooler such that the inkjet nozzle's temperature is controllable, and a stainless steel cover should shield the nozzle orifice from most of the thermal radiation from the substrate. 
 					</p>
 
-					<img data-src='opt_image/HAMR3_mid_build.jpg'  class='center lazy'/>
+					<div class = "image_container">
+						<img data-src='opt_image/hamr3cad.png'  class='center lazy'/>
+						<img data-src='opt_image/hamr3iso.png'  class='center lazy'/>
+						<img data-src='opt_image/hamr3side.png'  class='center lazy'/>
+					</div>
 
 					<p>
-						HAMR3 itself is in the middle of getting built, though so far it's looking fantastic in my opinion. More details to follow when I'm not elbows deep in a pressure vessel. 
+						I ran out of time in my masters to fully characterize and troubleshoot the system. The main things left are fully characterizing what print parameters are needed to actually get reliable results with the hybrid inkjet-SLM approach and fully testing/tuning the bed heating system. Otherwise I was able to do a small parameter sweep with 316L stainless, and was able to demonstrate a controlled gradient print (thank you to Emre Tekoglu for the EDX analysis below). I got lazy with the scale bars but the small cubes shown below are about 4x6x3mm (WxLxH) (left) and 3x3x1mm (right).
 					</p>
+
+					<div class = "image_container">
+						<img data-src='opt_image/20230614 overview.png'  class='center lazy'/>
+						<img data-src='opt_image/hamr3EDX.png'  class='center lazy'/>
+					</div>
+
+					<p>
+						In addition to the two SLM machines I created a filter system to extract the dangerous particulates generated from the print process.
+					</p>
+
+					<img data-src='opt_image/hamrFilters.JPG'  class='center lazy'/>
+
+					<p>
+						And a new jig to align the laser coming from the optical head. 
+					</p>
+
+					<div class = "image_container">
+						<img data-src='opt_image/laserAlign.png'  class='center lazy'/>
+						<img data-src='opt_image/laserAlignTool.png'  class='center lazy'/>
+					</div>
+					<p>
+						I also got to write a lot of code to help with focusing the laser head and generating print files for both the laser scan head and the inkjet gantry. My GUI's were pretty Windows Vista-esque though. 
+					</p>
+
+					<img data-src='opt_image/guiSnap.png'  class='center lazy'/>
+					
+				</div>
+					
 				</div>
 
 
